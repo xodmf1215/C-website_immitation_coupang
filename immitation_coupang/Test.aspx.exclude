@@ -1,0 +1,306 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="Test" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+
+        .style10
+        {
+            width: 100%;
+        }
+        .style11
+        {
+            width: 421px;
+            height: 33px;
+        }
+        .style25
+        {
+            width: 265px;
+        }
+        .style24
+        {
+            width: 243px;
+            height: 33px;
+        }
+        .style28
+        {
+            width: 305px;
+            height: 33px;
+        }
+        .style21
+        {
+            width: 458px;
+            height: 33px;
+        }
+        .style17
+        {
+            width: 421px;
+            height: 50px;
+        }
+        .style27
+        {
+            width: 330px;
+        }
+        .style26
+        {
+            width: 9px;
+        }
+        .style22
+        {
+            width: 458px;
+            height: 50px;
+        }
+        .style19
+        {
+            width: 421px;
+            height: 39px;
+        }
+        .style20
+        {
+            width: 150px;
+            height: 39px;
+        }
+        .style23
+        {
+            width: 458px;
+            height: 39px;
+        }
+        .style1
+        {
+            width: 100%;
+        }
+        .style18
+        {
+            width: 247px;
+            height: 702px;
+        }
+        .style3
+        {
+            width: 976px;
+            height: 111px;
+        }
+        .style16
+        {
+            width: 633px;
+            height: 38px;
+        }
+        .style8
+        {
+            width: 762px;
+            height: 68px;
+        }
+        .style29
+        {
+            width: 296px;
+            height: 41px;
+        }
+        .style12
+        {
+            width: 469px;
+            height: 141px;
+        }
+        .style14
+        {
+            width: 974px;
+            height: 71px;
+        }
+        </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    <table cellpadding="0" cellspacing="0" class="style10">
+        <tr>
+            <td bgcolor="#F0F0F0">
+                <img alt="" class="style11" src="Images/Fixed/FixedT1L1Padding.png" /></td>
+            <td bgcolor="#F0F0F0" class="style25">
+                <img alt="" class="style24" src="Images/Fixed/FixedT1L2_.png" /></td>
+            <td bgcolor="#F0F0F0" colspan="3">
+                <table class="style10">
+                    <tr>
+                        <td>
+                            <img alt="" class="style28" src="Images/Fixed/FixedT1L2-3.png" /></td>
+                        <td>
+                            <asp:ImageButton ID="igbLogin" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedT1L3Login.png" onclick="igbLogin_Click" />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblName" runat="server" style="font-weight: 700"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="igbCusCenter" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedT1L4CusCenter.png" />
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="igbMyPage" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedT1L5Mypage.png" onclick="igbMyPage_Click" />
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="igbBasket" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedT1L6Cart.png" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td bgcolor="#F0F0F0">
+                <img alt="" class="style21" src="Images/Fixed/FixedT1L7Padding_.png" /></td>
+        </tr>
+        <tr>
+            <td bgcolor="#EAEDF1">
+                <img alt="" class="style17" src="Images/Fixed/FixedT2L1Padding.png" /></td>
+            <td bgcolor="#F0F0F0" class="style25">
+                <asp:ImageButton ID="igbToMain" runat="server" 
+                    ImageUrl="~/Images/Fixed/FixedT2L2ToMain.png" onclick="igbToMain_Click" />
+            </td>
+            <td bgcolor="#F0F0F0">
+                <table class="style10">
+                    <tr>
+                        <td class="style27">
+                            <asp:TextBox ID="txtSearch" runat="server" Height="32px" Width="618px"></asp:TextBox>
+                        </td>
+                        <td class="style26">
+                            <asp:ImageButton ID="igbSearch" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedT2L3SerchBtn.png" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td bgcolor="#F0F0F0" colspan="3">
+                <img alt="" class="style22" src="Images/Fixed/FixedT2L4Padding_.png" /></td>
+        </tr>
+        <tr>
+            <td>
+                <img alt="" class="style19" src="Images/Fixed/FixedT3L1Padding.png" /></td>
+            <td class="style25">
+                <img alt="" class="style20" src="Images/Fixed/FixedT3L2Category.png" /></td>
+            <td colspan="2">
+                <table class="style10">
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblCatFood" runat="server" Text="식품"></asp:Label>
+                            <asp:ImageButton ID="ibgFixFood1" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg1-1.png" />
+                            <asp:ImageButton ID="ibgFixFood2" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg1-2.png" />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblCatCloth" runat="server" Text="의류"></asp:Label>
+                            <asp:ImageButton ID="ibgFixCloth1" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg2-1.png" />
+                            <asp:ImageButton ID="ibgFixCloth2" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg2-2.png" />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblCatDigit" runat="server" Text="가전"></asp:Label>
+                            <asp:ImageButton ID="ibgFixDigit1" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg3-1.png" />
+                            <asp:ImageButton ID="ibgFixDigit2" runat="server" 
+                                ImageUrl="~/Images/Fixed/FixedCtg3-2.png" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2">
+                <img alt="" class="style23" src="Images/Fixed/FixedT3L3Padding_.png" /></td>
+        </tr>
+    </table>
+    
+    </div>
+    
+        <table class="style1">
+            <tr>
+                <td rowspan="10">
+                    <img alt="" class="style18" 
+                        src="Images/MemberModification/Membermodification_side__.png" /></td>
+                <td colspan="3">
+                    <img alt="" class="style3" 
+                        src="Images/MemberModification/Membermodification_center1.png" /></td>
+                <td rowspan="10">
+                    <img alt="" class="style18" src="image/Membermodification_side__.png" /></td>
+            </tr>
+            <tr>
+                <td bgcolor="#E8EEF8">
+                    <img alt="" class="style20" 
+                        src="Images/MemberModification/Membermodification_email_.png" /></td>
+                <td>
+                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:Button ID="btnEmailCheck" runat="server" Text="중복체크" />
+                </td>
+                <td>
+                    <img alt="" class="style16" src="image/Membermodification_center-side.png" /></td>
+            </tr>
+            <tr>
+                <td bgcolor="#E8EEF8">
+                    <img alt="" class="style19" 
+                        src="Images/MemberModification/Membermodification_Name_.png" /></td>
+                <td>
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <img alt="" class="style16" src="image/Membermodification_center-side.png" /></td>
+            </tr>
+            <tr>
+                <td bgcolor="#ECF0F8">
+                    <img alt="" class="style27" 
+                        src="Images/MemberModification/Membermodification_tel__.png" /></td>
+                <td>
+                    <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <img alt="" class="style16" src="image/Membermodification_center-side.png" /></td>
+            </tr>
+            <tr>
+                <td bgcolor="#E8EEF8">
+                    <img alt="" class="style22" src="image/Membermodification_PW1_.png" /></td>
+                <td colspan="2">
+                    <img alt="" class="style8" src="image/Membermodification_PW2.png" /></td>
+            </tr>
+            <tr>
+                <td bgcolor="White">
+                    <img alt="" class="style29" src="image/Membermodification_PW3_.png" /></td>
+                <td>
+                    <asp:TextBox ID="txtPW1" runat="server"></asp:TextBox>
+                </td>
+                <td rowspan="3">
+                    <img alt="" class="style12" src="image/Membermodification_PW6.png" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <img alt="" class="style24" src="image/Membermodification_PW4_.png" /></td>
+                <td>
+                    <asp:TextBox ID="txtPW2" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="style17">
+                    <img alt="" class="style25" src="image/Membermodification_PW5_.png" /></td>
+                <td class="style17">
+                    <asp:TextBox ID="txtPW3" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="style26">
+                    <img alt="" class="style28" 
+                        src="image/Membermodification_modification_side_.png" /></td>
+                <td class="style26">
+                    <asp:ImageButton ID="btnModification" runat="server" EnableTheming="True" 
+                        Height="35px" ImageUrl="~/image/Membermodification_modification.png"  Width="53px" />
+                    <asp:Label ID="lblMSG" runat="server"></asp:Label>
+                </td>
+                <td class="style26">
+                    <img alt="" class="style28" 
+                        src="image/Membermodification_modification_side_.png" /></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <img alt="" class="style14" src="image/Membermodification_center-bottom.png" /></td>
+            </tr>
+        </table>
+    
+    </form>
+</body>
+</html>
