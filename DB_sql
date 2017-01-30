@@ -1,0 +1,341 @@
+USE [master]
+GO
+/****** Object:  Database [COUPANGDB_B]    Script Date: 06/26/2015 06:13:51 ******/
+CREATE DATABASE [COUPANGDB_B] ON  PRIMARY 
+( NAME = N'COUPANGDB_B', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\COUPANGDB_B.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'COUPANGDB_B_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\COUPANGDB_B_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [COUPANGDB_B] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [COUPANGDB_B].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [COUPANGDB_B] SET ANSI_NULL_DEFAULT OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET ANSI_NULLS OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET ANSI_PADDING OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET ANSI_WARNINGS OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET ARITHABORT OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET AUTO_CLOSE OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET AUTO_CREATE_STATISTICS ON
+GO
+ALTER DATABASE [COUPANGDB_B] SET AUTO_SHRINK OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET AUTO_UPDATE_STATISTICS ON
+GO
+ALTER DATABASE [COUPANGDB_B] SET CURSOR_CLOSE_ON_COMMIT OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET CURSOR_DEFAULT  GLOBAL
+GO
+ALTER DATABASE [COUPANGDB_B] SET CONCAT_NULL_YIELDS_NULL OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET NUMERIC_ROUNDABORT OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET QUOTED_IDENTIFIER OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET RECURSIVE_TRIGGERS OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET  DISABLE_BROKER
+GO
+ALTER DATABASE [COUPANGDB_B] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET DATE_CORRELATION_OPTIMIZATION OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET TRUSTWORTHY OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET ALLOW_SNAPSHOT_ISOLATION OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET PARAMETERIZATION SIMPLE
+GO
+ALTER DATABASE [COUPANGDB_B] SET READ_COMMITTED_SNAPSHOT OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET HONOR_BROKER_PRIORITY OFF
+GO
+ALTER DATABASE [COUPANGDB_B] SET  READ_WRITE
+GO
+ALTER DATABASE [COUPANGDB_B] SET RECOVERY SIMPLE
+GO
+ALTER DATABASE [COUPANGDB_B] SET  MULTI_USER
+GO
+ALTER DATABASE [COUPANGDB_B] SET PAGE_VERIFY CHECKSUM
+GO
+ALTER DATABASE [COUPANGDB_B] SET DB_CHAINING OFF
+GO
+USE [COUPANGDB_B]
+GO
+/****** Object:  Table [dbo].[SELL_CUSTOMER]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SELL_CUSTOMER](
+	[scID] [varchar](50) NOT NULL,
+	[scName] [varchar](50) NOT NULL,
+	[scPw] [varchar](20) NOT NULL,
+	[scAddr] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_SELL_CUSTOMER] PRIMARY KEY CLUSTERED 
+(
+	[scID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0001', N'쿠폰월드', N'1234', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0002', N'횡성한우', N'4567', N'대전시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0003', N'롯데햄', N'8901', N'경기도 의정부시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0004', N'양말공장', N'12345', N'경기도 고양시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0005', N'(주)펭귄', N'45451', N'부산시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0006', N'상의나라', N'41231', N'대전시 만년동')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0007', N'팬츠팬츠', N'105050', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0008', N'LG전자', N'203', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0009', N'삼성전자', N'3210', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0010', N'내비내비', N'203', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'S0011', N'보스 오디오', N'4040', N'서울시')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'seller_test', N'홍길동', N'123', N'평양')
+INSERT [dbo].[SELL_CUSTOMER] ([scID], [scName], [scPw], [scAddr]) VALUES (N'seller01', N'판매왕', N'123', N'서울')
+/****** Object:  Table [dbo].[BUY_CUSTOMER]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[BUY_CUSTOMER](
+	[bcEmail] [varchar](30) NOT NULL,
+	[bcName] [varchar](20) NOT NULL,
+	[bcPw] [varchar](20) NOT NULL,
+	[bcAddr] [varchar](50) NOT NULL,
+	[bcTel] [char](13) NOT NULL,
+	[bcBirth] [date] NULL,
+	[bcRank] [varchar](10) NULL,
+ CONSTRAINT [PK_BUY_CUSTOMER] PRIMARY KEY CLUSTERED 
+(
+	[bcEmail] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'asd123@naver.com', N'배배배', N'5678', N'배배배배배', N'010-0000-9999', CAST(0xC3150B00 AS Date), N'3')
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'khj8901@naveer.com', N'김현중', N'9012', N'수락산역', N'010-4567-8901', CAST(0x56180B00 AS Date), NULL)
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'lll123@naver.com', N'이봉호', N'5678', N'이봉호', N'010-0000-0000', CAST(0xC3150B00 AS Date), N'3')
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'oh9301@naver.com', N'오성용', N'5678', N'공릉3동', N'010-1234-5656', CAST(0x73190B00 AS Date), NULL)
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'test@test', N'홍길동', N'12345', N'한양', N'010-9999-9999', CAST(0x1E3A0B00 AS Date), N'3')
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'test@test.com', N'홍길동', N'12345', N'한양', N'010-1234-1234', CAST(0x1E3A0B00 AS Date), N'3')
+INSERT [dbo].[BUY_CUSTOMER] ([bcEmail], [bcName], [bcPw], [bcAddr], [bcTel], [bcBirth], [bcRank]) VALUES (N'xodmf1215@naver.com', N'태리', N'1234', N'의정부', N'0100101010   ', CAST(0x75250B00 AS Date), NULL)
+/****** Object:  Table [dbo].[CATEGORY]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[CATEGORY](
+	[ctNumber] [char](5) NOT NULL,
+	[ctBig] [varchar](50) NOT NULL,
+	[ctSmall] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CATEGORY] PRIMARY KEY CLUSTERED 
+(
+	[ctNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'1    ', N'식품', N'맛집')
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'2    ', N'식품', N'가공식품')
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'3    ', N'패션잡화', N'여성의류')
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'4    ', N'패션잡화', N'남성의류')
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'5    ', N'가전/디지털', N'생활가전')
+INSERT [dbo].[CATEGORY] ([ctNumber], [ctBig], [ctSmall]) VALUES (N'6    ', N'가전/디지털', N'자동차용 전자기기')
+/****** Object:  Table [dbo].[PRODUCT]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PRODUCT](
+	[pdNumber] [char](5) NOT NULL,
+	[pdName] [varchar](20) NOT NULL,
+	[pdCost] [int] NOT NULL,
+	[pdTotal] [int] NOT NULL,
+	[pdRemain] [int] NOT NULL,
+	[pdspan] [date] NOT NULL,
+	[pdctNumber] [char](5) NOT NULL,
+	[pdscID] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PRODUCT] PRIMARY KEY CLUSTERED 
+(
+	[pdNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0001', N'롯데리아 쿠폰', 3000, 1000, 992, CAST(0x223A0B00 AS Date), N'1    ', N'S0001')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0002', N'맥도날드 쿠폰', 5000, 500, 500, CAST(0x223A0B00 AS Date), N'1    ', N'S0001')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0003', N'횡성한우 쿠폰', 29999, 100, 100, CAST(0x223A0B00 AS Date), N'1    ', N'S0002')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0004', N'참치 세트', 30000, 555, 555, CAST(0x223A0B00 AS Date), N'2    ', N'S0003')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0005', N'어묵 세트', 20500, 401, 401, CAST(0x223A0B00 AS Date), N'2    ', N'S0003')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0006', N'양반 고등어', 50000, 300, 300, CAST(0x223A0B00 AS Date), N'2    ', N'S0005')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0007', N'여자 양말', 1000, 1000, 1000, CAST(0x223A0B00 AS Date), N'3    ', N'S0004')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0008', N'여자 상의', 20000, 60, 55, CAST(0x223A0B00 AS Date), N'3    ', N'S0006')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0009', N'여자 하의', 49900, 50, 50, CAST(0x223A0B00 AS Date), N'3    ', N'S0007')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0010', N'남자 양말', 1000, 1000, 1000, CAST(0x223A0B00 AS Date), N'4    ', N'S0004')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0011', N'남자 상의', 78000, 1500, 1000, CAST(0x223A0B00 AS Date), N'4    ', N'S0006')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0012', N'남자 하의', 990000, 400, 400, CAST(0x223A0B00 AS Date), N'4    ', N'S0007')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0013', N'LG TV', 1230000, 10, 10, CAST(0x223A0B00 AS Date), N'5    ', N'S0008')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0014', N'삼성 TV', 2030000, 10, 10, CAST(0x223A0B00 AS Date), N'5    ', N'S0009')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0015', N'삼성 에어컨', 304000, 100, 100, CAST(0x223A0B00 AS Date), N'5    ', N'S0009')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0016', N'내비게이션', 175000, 1000, 1000, CAST(0x223A0B00 AS Date), N'6    ', N'S0010')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0017', N'삼성 블랙박스', 18500, 1000, 1000, CAST(0x223A0B00 AS Date), N'6    ', N'S0009')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0018', N'보스 차량용 오디오', 3000000, 500, 500, CAST(0x223A0B00 AS Date), N'6    ', N'S0011')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0019', N'식빵', 50000, 100, 50, CAST(0xEB390B00 AS Date), N'2    ', N'seller01')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0020', N'호밀식빵', 3000, 100, 0, CAST(0xEB390B00 AS Date), N'2    ', N'seller01')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0021', N'맛동산', 1200, 1000, 1000, CAST(0x403A0B00 AS Date), N'2    ', N'seller01')
+INSERT [dbo].[PRODUCT] ([pdNumber], [pdName], [pdCost], [pdTotal], [pdRemain], [pdspan], [pdctNumber], [pdscID]) VALUES (N'P0022', N'테스트', 10000, 500, 400, CAST(0x603A0B00 AS Date), N'1    ', N'seller_test')
+/****** Object:  Table [dbo].[QnA]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[QnA](
+	[qaNumber] [char](5) NOT NULL,
+	[qaQue] [varchar](200) NOT NULL,
+	[qaAns] [varchar](200) NULL,
+	[qapdNumber] [char](5) NULL,
+ CONSTRAINT [PK_QnA] PRIMARY KEY CLUSTERED 
+(
+	[qaNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'1    ', N'질이 좋군요', N'감사합니다', N'P0001')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'10   ', N'가격 대비 나쁘지 않은것 같아요', N'더 좋은 품질로 뵙겠습니다.', N'P0005')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'11   ', N'오 대박 완전 싸', N'여기보다 싼데는 없죠 하하', N'P0007')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'12   ', N'여기서 평생 신을 양말 다 사가요 ㅎㅎ', N'평생 신을 수 있도록 제작하겠습니다', N'P0007')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'13   ', N'땀 흡수 좋네요', N'감사합니다', N'P0010')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'14   ', N'얇아서 여름에 입고 다니기 좋네요', N'통풍성이 뛰어난 제품입니다.', N'P0008')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'15   ', N'스키니 핏이 살아있네요', N'저희는 항상 최고의 핏을 고집합니다.', N'P0009')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'16   ', N'셔츠 좋네요', N'감사감사', N'P0011')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'17   ', N'역시 싸롸있는 LG LCD 죽이네요', N'저희는 최고입니다.', N'P0013')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'18   ', N'요즘 삼성꺼밖에 안쓰네요', N'당연한거 아닌가요?', N'P0014')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'19   ', N'대박 완전 시원해', N'쿨쿨~', N'P0015')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'2    ', N'새로운 맛입니다', N'더 노력하도록 하겠습니다', N'P0001')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'20   ', N'내비 쓸만하네요 AS도 좋고요', N'필쏘굿~ 어디든지 막히는 곳 없이 안내해줍니다.', N'P0016')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'21   ', N'블박은 역시', N'삼성이죠!', N'P0017')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'22   ', N'마치 호밀밭에 다녀온 기분이네요', N'저희 식빵은 항상 최고이고 최고입니다.', N'P0020')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'23   ', N'부담없네요', N'부담없는 식빵!', N'P0019')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'24   ', N'손이가요 손이가~', N'맛동산에 손이가요~', N'P0021')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'3    ', N'너무 비싸네요', NULL, N'P0003')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'4    ', N'육질이 정말 좋은 편이네요', N'항상 최고만을 고집합니다. 감사합니다.', N'P0003')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'5    ', N'살짝 덜 익힌 느낌이에요', N'개인차에 따른 것이기에 죄송합니다.', N'P0002')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'6    ', N'저렴한 가격에 좋은 질을 제공하네요', N'감사합니다. 더 좋은 품질로 제공하도록 노력하겠습니다.', N'P0004')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'7    ', N'입에서 살살 녹네요 기대 안했는데', N'기대하셔도 그 이상입니다.', N'P0004')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'8    ', N'둘이 먹다가 하나가 죽어도 모를 맛이네요.', N'둘 다 죽도록 노력하겠습니다.', N'P0006')
+INSERT [dbo].[QnA] ([qaNumber], [qaQue], [qaAns], [qapdNumber]) VALUES (N'9    ', N'저렴한데 뭔가 좀 아쉽네요', N'더 노력하겠습니다.', N'P0005')
+/****** Object:  Table [dbo].[OPTION]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[OPTION](
+	[opNumber] [char](5) NOT NULL,
+	[opName] [varchar](400) NOT NULL,
+	[opMoneyChange] [int] NOT NULL,
+	[oppdNumber] [char](5) NOT NULL,
+ CONSTRAINT [PK_OPTION] PRIMARY KEY CLUSTERED 
+(
+	[opNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[OPTION] ([opNumber], [opName], [opMoneyChange], [oppdNumber]) VALUES (N'O0001', N'사이즈 S(+0)', 0, N'P0008')
+INSERT [dbo].[OPTION] ([opNumber], [opName], [opMoneyChange], [oppdNumber]) VALUES (N'O0002', N'사이즈 L(+1000)', 1000, N'P0008')
+INSERT [dbo].[OPTION] ([opNumber], [opName], [opMoneyChange], [oppdNumber]) VALUES (N'O0003', N'중고(-4000)', -4000, N'P0008')
+/****** Object:  Table [dbo].[BUY_INFO]    Script Date: 06/26/2015 06:13:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[BUY_INFO](
+	[biNumber] [char](5) NOT NULL,
+	[bibcEmail] [varchar](30) NOT NULL,
+	[bipdNumber] [char](5) NOT NULL,
+	[biAmount] [int] NOT NULL,
+	[biDate] [date] NOT NULL,
+	[biCost] [int] NOT NULL,
+ CONSTRAINT [PK_BUY_INFO_1] PRIMARY KEY CLUSTERED 
+(
+	[biNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0001', N'xodmf1215@naver.com', N'P0008', 3, CAST(0x1D3A0B00 AS Date), 20000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0002', N'xodmf1215@naver.com', N'P0003', 1, CAST(0x02380B00 AS Date), 4000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0003', N'xodmf1215@naver.com', N'P0001', 5, CAST(0x1D3A0B00 AS Date), 15000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0004', N'oh9301@naver.com', N'P0019', 50, CAST(0x1E3A0B00 AS Date), 2500000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0005', N'asd123@naver.com', N'P0008', 5, CAST(0x1E3A0B00 AS Date), 100000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0006', N'asd123@naver.com', N'P0001', 1, CAST(0x1E3A0B00 AS Date), 3000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0007', N'test@test.com', N'P0001', 2, CAST(0x1E3A0B00 AS Date), 6000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0008', N'test@test.com', N'P0020', 100, CAST(0x1E3A0B00 AS Date), 300000)
+INSERT [dbo].[BUY_INFO] ([biNumber], [bibcEmail], [bipdNumber], [biAmount], [biDate], [biCost]) VALUES (N'B0009', N'test@test.com', N'P0022', 100, CAST(0x1E3A0B00 AS Date), 1000000)
+/****** Object:  ForeignKey [FK_PRODUCT_CATEGORY]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[PRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT_CATEGORY] FOREIGN KEY([pdctNumber])
+REFERENCES [dbo].[CATEGORY] ([ctNumber])
+GO
+ALTER TABLE [dbo].[PRODUCT] CHECK CONSTRAINT [FK_PRODUCT_CATEGORY]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT_SELL_CUSTOMER]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[PRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT_SELL_CUSTOMER] FOREIGN KEY([pdscID])
+REFERENCES [dbo].[SELL_CUSTOMER] ([scID])
+GO
+ALTER TABLE [dbo].[PRODUCT] CHECK CONSTRAINT [FK_PRODUCT_SELL_CUSTOMER]
+GO
+/****** Object:  ForeignKey [FK_QnA_PRODUCT]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[QnA]  WITH CHECK ADD  CONSTRAINT [FK_QnA_PRODUCT] FOREIGN KEY([qapdNumber])
+REFERENCES [dbo].[PRODUCT] ([pdNumber])
+GO
+ALTER TABLE [dbo].[QnA] CHECK CONSTRAINT [FK_QnA_PRODUCT]
+GO
+/****** Object:  ForeignKey [FK_OPTION_PRODUCT]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[OPTION]  WITH CHECK ADD  CONSTRAINT [FK_OPTION_PRODUCT] FOREIGN KEY([oppdNumber])
+REFERENCES [dbo].[PRODUCT] ([pdNumber])
+GO
+ALTER TABLE [dbo].[OPTION] CHECK CONSTRAINT [FK_OPTION_PRODUCT]
+GO
+/****** Object:  ForeignKey [FK_BUY_INFO_BUY_CUSTOMER1]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[BUY_INFO]  WITH CHECK ADD  CONSTRAINT [FK_BUY_INFO_BUY_CUSTOMER1] FOREIGN KEY([bibcEmail])
+REFERENCES [dbo].[BUY_CUSTOMER] ([bcEmail])
+GO
+ALTER TABLE [dbo].[BUY_INFO] CHECK CONSTRAINT [FK_BUY_INFO_BUY_CUSTOMER1]
+GO
+/****** Object:  ForeignKey [FK_BUY_INFO_PRODUCT]    Script Date: 06/26/2015 06:13:51 ******/
+ALTER TABLE [dbo].[BUY_INFO]  WITH CHECK ADD  CONSTRAINT [FK_BUY_INFO_PRODUCT] FOREIGN KEY([bipdNumber])
+REFERENCES [dbo].[PRODUCT] ([pdNumber])
+GO
+ALTER TABLE [dbo].[BUY_INFO] CHECK CONSTRAINT [FK_BUY_INFO_PRODUCT]
+GO
